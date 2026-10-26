@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Табачук Ігор Антонович — Юрист з військового права | Івано-Франківськ</title>
+<meta name="description" content="Юридична допомога з питань мобілізації, ТЦК, ВЛК, відстрочок та СЗЧ. Очні консультації в Івано-Франківську. Адвокат Табачук Ігор Антонович.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="stylle.css">
+</head>
+<body>
+
+<!-- ===== ЕКРАН ЗАВАНТАЖЕННЯ ===== -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <svg class="loader__seal" viewBox="0 0 120 120" width="92" height="92">
+      <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="1.5" class="loader__ring loader__ring--1"/>
+      <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" class="loader__ring loader__ring--2"/>
+      <text x="60" y="55" text-anchor="middle" class="loader__text-top">ВІЙСЬКОВЕ</text>
+      <text x="60" y="72" text-anchor="middle" class="loader__text-bottom">ПРАВО</text>
+    </svg>
+    <div class="loader__bar"><span></span></div>
+    <p class="loader__caption">Відкриваємо справу<span class="dots"><i>.</i><i>.</i><i>.</i></span></p>
+  </div>
+</div>
+
+<!-- ===== КАСТОМНИЙ КУРСОР ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== ФОНОВА ТЕКСТУРА ДОСЬЄ (фіксована, на всю сторінку) ===== -->
+<div class="case-bg" aria-hidden="true">
+  <div class="case-bg__grid"></div>
+  <div class="case-bg__vignette"></div>
+</div>
+
+<!-- ===== ПРОГРЕС СКРОЛУ ===== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===== ХЕДЕР ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container site-header__inner">
+    <a href="#hero" class="brand">
+      <span class="brand__mark">ТІА</span>
+      <span class="brand__text">Табачук<br><i>Юрист</i></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#about" class="main-nav__link" data-label="01">Про мене</a>
+      <a href="#problem" class="main-nav__link" data-label="02">Проблема</a>
+      <a href="#services" class="main-nav__link" data-label="03">Послуги</a>
+      <a href="#process" class="main-nav__link" data-label="04">Процес</a>
+      <a href="#cases" class="main-nav__link" data-label="05">Кейси</a>
+      <a href="#experience" class="main-nav__link" data-label="06">Досвід</a>
+      <a href="#faq" class="main-nav__link" data-label="07">Питання</a>
+      <a href="#testimonials" class="main-nav__link" data-label="08">Відгуки</a>
+      <a href="#contact" class="main-nav__link" data-label="09">Контакти</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Перемкнути тему">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.6" y2="4.4"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--ghost-small">Записатись</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- мобільне меню -->
+<div class="mobile-nav" id="mobileNav">
+  <nav>
+    <a href="#about" class="mobile-nav__link">01 — Про мене</a>
+    <a href="#problem" class="mobile-nav__link">02 — Проблема</a>
+    <a href="#services" class="mobile-nav__link">03 — Послуги</a>
+    <a href="#process" class="mobile-nav__link">04 — Процес</a>
+    <a href="#cases" class="mobile-nav__link">05 — Кейси</a>
+    <a href="#experience" class="mobile-nav__link">06 — Досвід</a>
+    <a href="#faq" class="mobile-nav__link">07 — Питання</a>
+    <a href="#testimonials" class="mobile-nav__link">08 — Відгуки</a>
+    <a href="#contact" class="mobile-nav__link">09 — Контакти</a>
+  </nav>
+</div>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- 00 — HERO / ПРО МЕНЕ З ФОТО -->
+<!-- ============================================================ -->
+<section class="section hero" id="hero">
+  <div class="container hero__grid">
+
+    <div class="hero__photo-wrap reveal" data-reveal="left">
+      <div class="hero__photo-frame">
+        <div class="hero__stamp">ЮРИСТ<br>УКРАЇНИ</div>
+        <img src="/img/photo_2026-06-20 23.39.39.jpeg" alt="Табачук Ігор Антонович, адвокат" class="hero__photo" id="heroPhoto">
+      </div>
+      <div class="hero__case-number">СПРАВА № <span id="caseNum">2026‑ВП</span></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow reveal" data-reveal="up">Юрист · Військове право · Івано‑Франківськ</p>
+      <h1 class="hero__title reveal" data-reveal="up">
+        <span class="hero__title-line" data-text="Захист, коли">Захист, коли</span>
+        <span class="hero__title-line hero__title-line--accent" data-text="державна машина">державна машина</span>
+        <span class="hero__title-line" data-text="наступає на вас">наступає на вас</span>
+      </h1>
+      <p class="hero__lead reveal" data-reveal="up">
+        Мене звати <strong>Табачук Ігор Антонович</strong>. Я юрист, який щодня працює з найгострішою темою сьогодення — мобілізацією. Повістки, ТЦК, ВЛК, відстрочки, СЗЧ — я знаю цю систему зсередини і поясню вашу ситуацію прямо, без води та обіцянок «вирішити по дзвінку».
+      </p>
+
+      <div class="hero__points reveal" data-reveal="up">
+        <div class="hero__point"><span class="hero__point-mark">01</span>Очна консультація в Івано‑Франківську</div>
+        <div class="hero__point"><span class="hero__point-mark">02</span>Розбір справи за документами, а не «навмання»</div>
+        <div class="hero__point"><span class="hero__point-mark">03</span>Супровід від першого дзвінка до суду</div>
+      </div>
+
+      <div class="hero__cta reveal" data-reveal="up">
+        <a href="#contact" class="btn btn--primary">
+          <span>Записатись на консультацію</span>
+        </a>
+        <a href="tel:+380660900003" class="btn btn--outline">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h3.5l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5V19a2 2 0 0 1-2 2C10.5 21 3 13.5 3 6a2 2 0 0 1 2-2Z"/></svg>
+          <span>+380 (66) 090 00 03</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Гортати далі">
+    <span>Гортайте</span>
+    <svg viewBox="0 0 24 24" width="16" height="24"><path d="M12 2v18M12 20l-6-6M12 20l6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </a>
+</section>
+
+<!-- ============================================================ -->
+<!-- 01 — ПРО МЕНЕ / ОСВІТА ТА ДОСВІД -->
+<!-- ============================================================ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head reveal" data-reveal="up">
+      <span class="section-num">Ст. 01</span>
+      <h2 class="section-title">Хто веде вашу справу</h2>
+      <p class="section-sub">Не «юридичний центр» і не кол-центр з операторами. Особисто я веду кожну консультацію та кожну справу від початку до результату.</p>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__bio reveal" data-reveal="left">
+        <h3>Табачук Ігор Антонович</h3>
+        <p>Юрист, який спеціалізується на військовому праві та практично щодня супроводжує людей у питаннях мобілізації. Працюю з тими, хто отримав повістку, має проблеми з ТЦК, проходить ВЛК, потребує відстрочки або опинився під підозрою у СЗЧ.</p>
+        <p>Моя позиція проста: людина має знати свої права і діяти за законом — не з переляку, а усвідомлено. Кожна консультація — це розбір саме вашої ситуації, з документами на руках, а не загальні поради «з інтернету».</p>
+
+        <div class="about__badges">
+          <div class="badge"><strong>Особисто</strong>веду кожну справу</div>
+          <div class="badge"><strong>Очно</strong>Івано‑Франківськ</div>
+          <div class="badge"><strong>Чесно</strong>без порожніх обіцянок</div>
+        </div>
+      </div>
+
+     <div class="about__timeline reveal" data-reveal="right">
+
+  <div class="timeline-item">
+    <span class="timeline-item__year">Освіта</span>
+    <h4>Національна юридична академія України ім. Ярослава Мудрого</h4>
+    <p>
+      Закінчив один із провідних юридичних закладів України, здобувши повну вищу юридичну освіту за освітньо-кваліфікаційним рівнем магістра права.
+    </p>
+  </div>
+
+  <input type="checkbox">
+
+  <input type="text" placeholder="">
+
+  <div class="timeline-item">
+    <span class="timeline-item__year">Професійний шлях</span>
+    <h4>Підготовка та кваліфікація адвоката</h4>
+    <p>
+      У 2008 році вступив до Інституту підготовки юридичних кадрів для Служби безпеки України за результатами зовнішнього незалежного оцінювання та успішного складання нормативів з фізичної підготовки. Після другого курсу через отриману травму був переведений до Інституту підготовки кадрів для органів юстиції. У 2013 році отримав диплом магістра права, після чого розпочав професійну юридичну діяльність та здобув право на заняття адвокатською практикою.
+    </p>
+  </div>
+
+
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 02 — АКТУАЛЬНА ПРОБЛЕМА (МОБІЛІЗАЦІЯ) -->
+<!-- ============================================================ -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="section-head section-head--center reveal" data-reveal="up">
+      <span class="section-num">Ст. 02</span>
+      <h2 class="section-title">Мобілізація — питання, яке не можна ігнорувати</h2>
+      <p class="section-sub">Сьогодні майже кожна сім'я в Україні стикається з цим напряму. Помилка чи бездіяльність коштує дорого — а правильні, законні дії захищають вас і вашу родину.</p>
+    </div>
+
+    <div class="problem__stats reveal" data-reveal="up">
+      <div class="stat-card">
+        <span class="stat-card__num">100<small>%</small></span>
+        <span class="stat-card__label">випадків мають законний шлях вирішення</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">24<small>год</small></span>
+        <span class="stat-card__label">реагування на термінові звернення</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">1</span>
+        <span class="stat-card__label">особисто адвокат на всіх етапах справи</span>
+      </div>
+    </div>
+
+    <div class="problem__cards">
+      <article class="problem-card reveal" data-reveal="up">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="6" width="24" height="28" rx="1"/><line x1="13" y1="14" x2="27" y2="14"/><line x1="13" y1="20" x2="27" y2="20"/><line x1="13" y1="26" x2="22" y2="26"/></svg>
+        </div>
+        <h3>Отримали повістку</h3>
+        <p>Важливо розуміти, чи вручена вона законно, які у вас терміни та які дії доречні саме у вашому випадку.</p>
+      </article>
+      <article class="problem-card reveal" data-reveal="up">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="20" r="14"/><path d="M20 12v9l6 3"/></svg>
+        </div>
+        <h3>Тиск або порушення з боку ТЦК</h3>
+        <p>Дії посадових осіб теж регламентовані законом. Якщо межі порушено — це підстава для офіційного оскарження.</p>
+      </article>
+      <article class="problem-card reveal" data-reveal="up">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 40 40" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6 8 11v9c0 8 5 13 12 14 7-1 12-6 12-14v-9L20 6Z"/></svg>
+        </div>
+        <h3>Потрібна відстрочка чи бронювання</h3>
+        <p>Існує перелік законних підстав — за станом здоров'я, родинними обставинами чи родом діяльності. Розберемо, що підходить вам.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 03 — НАПРЯМКИ ПОСЛУГ -->
+<!-- ============================================================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head reveal" data-reveal="up">
+      <span class="section-num">Ст. 03</span>
+      <h2 class="section-title">З якими питаннями я допомагаю</h2>
+      <p class="section-sub">Кожен напрямок — це окрема процедура зі своїми строками й документами. Визначимо, що саме стосується вас, на першій консультації.</p>
+    </div>
+
+    <div class="services__grid">
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">01</span>
+        <h3>Мобілізація</h3>
+        <p>Повний супровід: оцінка ситуації, законність вручення повістки, представництво інтересів, підготовка до можливих сценаріїв.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">02</span>
+        <h3>Справи з ТЦК</h3>
+        <p>Захист ваших прав у взаємодії з територіальними центрами комплектування, оскарження неправомірних дій посадових осіб.</p>
+      </article>
+
+      <article class="service-card service-card--accent reveal" data-reveal="up">
+        <span class="service-card__num">03</span>
+        <h3>Виїзд на ТЦК як адвокат</h3>
+        <p>Особистий супровід адвоката безпосередньо на місці — під час виклику, бесіди чи спірної ситуації з ТЦК.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">04</span>
+        <h3>Оскарження рішень ВЛК</h3>
+        <p>Допомога у випадках незгоди з висновком військово-лікарської комісії, підготовка та подання скарг.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">05</span>
+        <h3>Відстрочки від мобілізації</h3>
+        <p>Перевірка підстав для відстрочки, збір та оформлення необхідних документів, супровід процедури.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">06</span>
+        <h3>Справи щодо СЗЧ</h3>
+        <p>Юридичний захист у справах про самовільне залишення частини, представництво інтересів на досудовому слідстві та в суді.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">07</span>
+        <h3>Оскарження рішень у суді</h3>
+        <p>Підготовка позовів, представництво в адміністративних судах усіх інстанцій з питань мобілізації.</p>
+      </article>
+
+      <article class="service-card reveal" data-reveal="up">
+        <span class="service-card__num">08</span>
+        <h3>Консультації щодо виїзду за кордон</h3>
+        <p>Роз'яснення законних підстав та порядку перетину кордону в умовах воєнного стану.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 04 — ЯК ВІДБУВАЄТЬСЯ РОБОТА (ПРОЦЕС) -->
+<!-- ============================================================ -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head reveal" data-reveal="up">
+      <span class="section-num">Ст. 04</span>
+      <h2 class="section-title">Як проходить співпраця</h2>
+      <p class="section-sub">Прозорий процес без зайвих кроків — від першого дзвінка до закритого питання.</p>
+    </div>
+
+    <div class="process__steps">
+      <div class="process-step reveal" data-reveal="up">
+        <div class="process-step__line">
+          <span class="process-step__dot">1</span>
+        </div>
+        <div class="process-step__body">
+          <h3>Звернення</h3>
+          <p>Залишаєте заявку на сайті або телефонуєте напряму. Коротко описуєте ситуацію — я орієнтовно визначаю напрямок роботи.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" data-reveal="up">
+        <div class="process-step__line">
+          <span class="process-step__dot">2</span>
+        </div>
+        <div class="process-step__body">
+          <h3>Очна консультація</h3>
+          <p>Зустрічаємось в офісі в Івано‑Франківську. Розбираю документи, пояснюю права та можливі варіанти дій по вашій справі.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" data-reveal="up">
+        <div class="process-step__line">
+          <span class="process-step__dot">3</span>
+        </div>
+        <div class="process-step__body">
+          <h3>План дій</h3>
+          <p>Формуємо чітку стратегію: які документи готувати, куди звертатись, які строки потрібно дотримати.</p>
+        </div>
+      </div>
+      <div class="process-step reveal" data-reveal="up">
+        <div class="process-step__line">
+          <span class="process-step__dot">4</span>
+        </div>
+        <div class="process-step__body">
+          <h3>Супровід</h3>
+          <p>Особисто представляю ваші інтереси — в ТЦК, ВЛК, на засіданнях суду — до отримання результату.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 05 — КЕЙСИ / ПРИКЛАДИ СПРАВ -->
+<!-- ============================================================ -->
+<section class="section cases" id="cases">
+  <div class="container">
+    <div class="section-head reveal" data-reveal="up">
+      <span class="section-num">Ст. 05</span>
+      <h2 class="section-title">Приклади справ</h2>
+      <p class="section-sub">Узагальнені приклади з практики — без розкриття персональних даних клієнтів.</p>
+    </div>
+
+    <div class="cases__grid">
+      <article class="case-card reveal" data-reveal="up">
+        <div class="case-card__head">
+          <span class="case-card__tag">Мобілізація</span>
+          <span class="case-card__status">Вирішено</span>
+        </div>
+        <h3>Оскарження порядку вручення повістки</h3>
+        <p>Клієнту вручили повістку з порушенням встановленої процедури. Підготовлено та подано скаргу, законність вручення спростовано.</p>
+      </article>
+
+      <article class="case-card reveal" data-reveal="up">
+        <div class="case-card__head">
+          <span class="case-card__tag">ВЛК</span>
+          <span class="case-card__status">Вирішено</span>
+        </div>
+        <h3>Оскарження висновку комісії</h3>
+        <p>Незгода з категорією придатності за результатами ВЛК. Зібрано медичну документацію, подано скаргу на перегляд рішення.</p>
+      </article>
+
+      <article class="case-card reveal" data-reveal="up">
+        <div class="case-card__head">
+          <span class="case-card__tag">Відстрочка</span>
+          <span class="case-card__status">Вирішено</span>
+        </div>
+        <h3>Оформлення відстрочки за сімейними обставинами</h3>
+        <p>Підготовлено повний пакет документів для підтвердження права на відстрочку, питання вирішено в установлені строки.</p>
+      </article>
+
+      <article class="case-card reveal" data-reveal="up">
+        <div class="case-card__head">
+          <span class="case-card__tag">СЗЧ</span>
+          <span class="case-card__status">У роботі</span>
+        </div>
+        <h3>Захист у справі про СЗЧ</h3>
+        <p>Представництво інтересів клієнта на стадії досудового розслідування, аналіз обставин справи та підготовка позиції захисту.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 06 — ЧОМУ Я / ПЕРЕВАГИ -->
+<!-- ============================================================ -->
+<section class="section experience" id="experience">
+  <div class="container experience__grid">
+    <div class="experience__side reveal" data-reveal="left">
+      <span class="section-num">Ст. 06</span>
+      <h2 class="section-title">Чому звертаються саме до мене</h2>
+      <p class="section-sub">Військове право — вузька і динамічна сфера. Тут немає місця шаблонним порадам.</p>
+      <a href="#contact" class="btn btn--primary">Обговорити мою ситуацію</a>
+    </div>
+
+    <div class="experience__list">
+      <div class="reason-item reveal" data-reveal="right">
+        <h3>Вузька спеціалізація</h3>
+        <p>Я не розпорошуюсь на десятки галузей права — фокус саме на мобілізаційному та військовому законодавстві, яке змінюється часто.</p>
+      </div>
+      <div class="reason-item reveal" data-reveal="right">
+        <h3>Особиста участь</h3>
+        <p>Кожну справу веду сам — від консультації до представництва в суді чи виїзду на ТЦК. Без передачі «менеджеру».</p>
+      </div>
+      <div class="reason-item reveal" data-reveal="right">
+        <h3>Чітка, чесна позиція</h3>
+        <p>Кажу прямо, які варіанти реально доступні у вашій ситуації, а які — ні. Без порожніх обіцянок.</p>
+      </div>
+      <div class="reason-item reveal" data-reveal="right">
+        <h3>Очний формат у Франківську</h3>
+        <p>Особиста зустріч дозволяє детально розібрати документи й дати точну, а не загальну консультацію.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 07 — ЧАСТІ ПИТАННЯ (FAQ) -->
+<!-- ============================================================ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal" data-reveal="up">
+      <span class="section-num">Ст. 07</span>
+      <h2 class="section-title">Часті питання</h2>
+      <p class="section-sub">Те, про що запитують найчастіше на першому дзвінку.</p>
+    </div>
+
+    <div class="faq__list">
+      <div class="faq-item reveal" data-reveal="up">
+        <button class="faq-item__q">
+          <span>Скільки коштує консультація?</span>
+          <span class="faq-item__plus"></span>
+        </button>
+        <div class="faq-item__a"><p>Вартість залежить від складності питання. Точну суму назву одразу після короткого опису вашої ситуації при зверненні — без прихованих платежів.</p></div>
+      </div>
+      <div class="faq-item reveal" data-reveal="up">
+        <button class="faq-item__q">
+          <span>Чи можна отримати консультацію онлайн?</span>
+          <span class="faq-item__plus"></span>
+        </button>
+        <div class="faq-item__a"><p>Основний формат роботи — очна консультація в Івано‑Франківську: вона дозволяє детально розглянути документи. Для термінових випадків можливе попереднє узгодження по телефону.</p></div>
+      </div>
+      <div class="faq-item reveal" data-reveal="up">
+        <button class="faq-item__q">
+          <span>Які документи взяти на першу зустріч?</span>
+          <span class="faq-item__plus"></span>
+        </button>
+        <div class="faq-item__a"><p>Паспорт, військово-обліковий документ, а також усі наявні папери щодо вашого питання — повістки, висновки ВЛК, медичні довідки тощо. Якщо чогось не вистачає, підкажу під час дзвінка.</p></div>
+      </div>
+      <div class="faq-item reveal" data-reveal="up">
+        <button class="faq-item__q">
+          <span>Чи виїжджаєте ви особисто на ТЦК?</span>
+          <span class="faq-item__plus"></span>
+        </button>
+        <div class="faq-item__a"><p>Так, особистий виїзд адвоката на ТЦК — окремий напрямок моєї роботи. Це супровід безпосередньо на місці під час спірної ситуації.</p></div>
+      </div>
+      <div class="faq-item reveal" data-reveal="up">
+        <button class="faq-item__q">
+          <span>Як швидко ви відповідаєте на звернення?</span>
+          <span class="faq-item__plus"></span>
+        </button>
+        <div class="faq-item__a"><p>На термінові звернення відповідаю протягом доби. Для гострих ситуацій — зверніться одразу телефоном, вказаним у контактах.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 08 — ВІДГУКИ -->
+<!-- ============================================================ -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head section-head--center reveal" data-reveal="up">
+      <span class="section-num">Ст. 08</span>
+      <h2 class="section-title">Відгуки клієнтів</h2>
+    </div>
+
+    <div class="testimonials__track reveal" data-reveal="up">
+      <article class="testimonial-card">
+        <p>«Прийшов із повісткою, не знав, що робити. Ігор Антонович спокійно пояснив усе по кроках і взяв справу під контроль. Відчув, що нарешті є на кого спертись».</p>
+        <div class="testimonial-card__author">
+          <span class="testimonial-card__initials">О. М.</span>
+          <div><strong>Олег М.</strong><small>Мобілізація</small></div>
+        </div>
+      </article>
+      <article class="testimonial-card">
+        <p>«Допоміг оскаржити рішення ВЛК, коли я був впевнений, що нічого вже не зробити. Все пояснив чітко, без зайвих обіцянок — і це найбільше викликало довіру».</p>
+        <div class="testimonial-card__author">
+          <span class="testimonial-card__initials">В. К.</span>
+          <div><strong>В'ячеслав К.</strong><small>ВЛК</small></div>
+        </div>
+      </article>
+      <article class="testimonial-card">
+        <p>«Особистий виїзд адвоката на ТЦК — це дійсно змінило ситуацію. Зрозумів, що мої права захищені, а не просто на словах».</p>
+        <div class="testimonial-card__author">
+          <span class="testimonial-card__initials">Р. С.</span>
+          <div><strong>Роман С.</strong><small>Виїзд на ТЦК</small></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 09 — КОНТАКТИ / ФОРМА ЗАПИСУ -->
+<!-- ============================================================ -->
+<section class="section contact" id="contact">
+  <div class="container contact__grid">
+
+    <div class="contact__info reveal" data-reveal="left">
+      <span class="section-num">Ст. 09</span>
+      <h2 class="section-title">Запишіться на консультацію</h2>
+      <p class="section-sub">Залиште заявку — і я зателефоную вам особисто.</p>
+
+      <ul class="contact__details">
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h3.5l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5V19a2 2 0 0 1-2 2C10.5 21 3 13.5 3 6a2 2 0 0 1 2-2Z"/></svg>
+          <div><strong>Телефон</strong><a href="tel:+380660900003">+380 (66) 090 00 03</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 6 8 7 8-7"/></svg>
+          <div><strong>Email</strong><a href="mailto:Igortab2022@gmail.com">Igortab2022@gmail.com</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m21 3-9 18-3-7-7-3 19-8Z"/></svg>
+          <div><strong>Telegram</strong><a href="https://t.me/Random_numbers1" target="_blank" rel="noopener">@Random_numbers1</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+          <div><strong>Очний прийом</strong><span>м. Івано‑Франківськ</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact__form reveal" data-reveal="right" id="bookingForm">
+      <h3>Заявка на консультацію</h3>
+
+      <div class="form-row">
+        <label for="f-name">Ім'я та прізвище</label>
+        <input type="text" id="f-name" name="name" placeholder="Як до вас звертатись" required>
+      </div>
+
+      <div class="form-row">
+        <label for="f-phone">Телефон</label>
+        <input type="tel" id="f-phone" name="phone" placeholder="+38 (0__) ___-__-__" required>
+      </div>
+
+      <div class="form-row">
+        <label for="f-topic">Тема звернення</label>
+        <select id="f-topic" name="topic" required>
+          <option value="" disabled selected>Оберіть напрямок</option>
+          <option>Мобілізація</option>
+          <option>Справи з ТЦК</option>
+          <option>Виїзд адвоката на ТЦК</option>
+          <option>Оскарження ВЛК</option>
+          <option>Відстрочка</option>
+          <option>СЗЧ</option>
+          <option>Оскарження в суді</option>
+          <option>Виїзд за кордон</option>
+          <option>Інше питання</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="f-message">Коротко опишіть ситуацію</label>
+        <textarea id="f-message" name="message" rows="3" placeholder="Кілька речень — цього достатньо для першого дзвінка"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full">
+        <span>Надіслати заявку</span>
+      </button>
+      <p class="contact__form-note">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних для зворотного дзвінка.</p>
+
+      <div class="form-success" id="formSuccess">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <p>Заявку прийнято. Я зателефоную вам найближчим часом.</p>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__mark">ТІА</span>
+      <div>
+        <strong>Табачук Ігор Антонович</strong>
+        <p>Юрист · Військове право · Івано‑Франківськ</p>
+      </div>
+    </div>
+
+   
+
+    <div class="site-footer__contacts">
+      <a href="tel:+380660900003">+380 (66) 090 00 03</a>
+      <a href="mailto:Igortab2022@gmail.com">Igortab2022@gmail.com</a>
+      <a href="https://t.me/Random_numbers1" target="_blank" rel="noopener">Telegram</a>
+    </div>
+
+    <p class="site-footer__legal">© <span id="year"></span> Табачук І. А. Інформація на сайті не є офертою.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
